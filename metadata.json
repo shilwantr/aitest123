@@ -1,0 +1,6 @@
+{
+  "name": "All AI Tools",
+  "description": "Discover and optimize for the best AI tools and GPTs available. Fast, reliable directory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
