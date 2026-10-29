@@ -1,51 +1,25 @@
-# Robots.txt for http://aallaitools.online
-# Optimized for Search Engines and AI / GPT Web Crawlers
-
 User-agent: *
 Allow: /
 
-# OpenAI Crawlers (GPT-4, SearchGPT, ChatGPT Browsing)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
-# Anthropic Claude Crawlers
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
-# Perplexity AI Search Crawler
 User-agent: PerplexityBot
-Allow: /
-
-# Google Search & Gemini Extended
-User-agent: Googlebot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-# Microsoft Bing & Copilot
-User-agent: Bingbot
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# Common Crawl (Used by training datasets & LLMs)
-User-agent: CCBot
-Allow: /
-
-# Sitemap Location
 Sitemap: http://aallaitools.online/sitemap.xml
