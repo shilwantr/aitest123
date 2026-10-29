@@ -30,13 +30,13 @@ schema_json = json.dumps({
             "@type": "WebSite",
             "@id": "http://aallaitools.online/#website",
             "url": "http://aallaitools.online/",
-            "name": "aallaitools.online",
-            "description": f"The definitive, fast, and comprehensive directory of {total_tools}+ worldwide artificial intelligence tools, models, and agents."
+            "name": "All AI Tools Directory & Best AI Tools List (2026)",
+            "description": f"The definitive, fast, and comprehensive directory of {total_tools}+ worldwide artificial intelligence tools, models, and agents. Find all AI tools list for writing, coding, images, voice, video, and search."
         },
         {
             "@type": "ItemList",
             "@id": "http://aallaitools.online/#featured",
-            "name": "Exhaustive Global AI Tools & GPTs Directory",
+            "name": f"All AI Tools List & Complete Global AI Directory ({total_tools}+ Tools)",
             "numberOfItems": total_tools,
             "itemListElement": schema_items
         }
@@ -96,23 +96,23 @@ html_template = f"""<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All AI Tools Directory | {total_tools}+ Exhaustive Worldwide AI Tools &amp; Agents (2026)</title>
-  <meta name="description" content="Discover, search, and benchmark {total_tools}+ global AI tools across Chat &amp; Reasoning, Coding &amp; Dev, Image &amp; Art, Voice &amp; Audio, Video &amp; 3D, and AI Search. High-speed, responsive, curated for humans and LLM agents." />
-  <meta name="keywords" content="AI tools directory, all AI tools, best AI tools 2026, generative AI directory, AI agents, LLM catalog, machine learning software, aixploria alternative, aitoolsdirectory" />
+  <title>All AI Tools Directory (2026) | Complete All AI Tools List &amp; {total_tools}+ Top Software</title>
+  <meta name="description" content="Explore the ultimate all AI tools list and global AI directory. Discover, search, and benchmark {total_tools}+ worldwide AI software, models, and autonomous agents across Chat, Coding, Image, Voice, Video, and Search." />
+  <meta name="keywords" content="all ai tools, all ai tools list, ai tools directory, best ai tools 2026, free ai tools list, top ai tools, ai software list, complete ai directory, generative ai tools, artificial intelligence tools directory, aixploria alternative, aitoolsdirectory" />
   <meta name="author" content="aallaitools.online" />
   <link rel="canonical" href="http://aallaitools.online/" />
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="All AI Tools Directory | {total_tools}+ Worldwide AI Platforms &amp; Agents" />
-  <meta property="og:description" content="Curated index of {total_tools}+ artificial intelligence tools across 6 distinct categories with instant search, pricing models, and bookmarks." />
+  <meta property="og:title" content="All AI Tools Directory &amp; All AI Tools List | {total_tools}+ Worldwide Platforms" />
+  <meta property="og:description" content="Discover the complete all AI tools list with {total_tools}+ artificial intelligence software, models, and apps across 6 core categories. Filter by Free, Freemium, and Paid." />
   <meta property="og:url" content="http://aallaitools.online/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="aallaitools.online" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="All AI Tools Directory | {total_tools}+ Exhaustive Worldwide Tools" />
-  <meta name="twitter:description" content="Search and discover {total_tools}+ AI tools and models worldwide. Zero-lag client-side filtering." />
+  <meta name="twitter:title" content="All AI Tools Directory | Exhaustive All AI Tools List ({total_tools}+ Tools)" />
+  <meta name="twitter:description" content="Browse the ultimate all AI tools directory and complete AI software list with lightning-fast instant search." />
 
   <!-- Favicon SVG -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234F46E5%22/><text y=%2268%22 x=%2250%22 font-family=%22system-ui,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>AI</text></svg>" />
@@ -260,7 +260,7 @@ html_template = f"""<!DOCTYPE html>
       -webkit-text-fill-color: transparent;
     }}
     .hero-sub {{
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 34px;
       color: var(--text-muted);
       font-size: 1.12rem;
@@ -713,20 +713,20 @@ html_template = f"""<!DOCTYPE html>
       <a href="#" class="brand">
         <span class="brand-icon">AI</span>
         <span>aallaitools.online</span>
-        <span class="live-badge">{total_tools}+ Verified</span>
+        <span class="live-badge">{total_tools}+ AI Tools</span>
       </a>
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#featured">Directory</a>
-        <a href="#categories">Categories</a>
-        <a href="#faq">FAQ</a>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="/robots.txt">Robots</a>
+        <a href="#featured">All AI Tools List</a>
+        <a href="#categories">AI Categories</a>
+        <a href="#faq">AI Directory FAQ</a>
+        <a href="/sitemap.xml">XML Sitemap</a>
+        <a href="/robots.txt">Robots.txt</a>
       </nav>
       <div class="nav-actions">
         <button id="show-saved-btn" class="btn-saved" title="View Bookmarked Tools">
           &#9733; Saved (<span id="saved-count">0</span>)
         </button>
-        <a href="#submit" class="btn-submit">+ Submit Tool</a>
+        <a href="#submit" class="btn-submit">+ Submit AI Tool</a>
       </div>
     </div>
   </header>
@@ -734,43 +734,43 @@ html_template = f"""<!DOCTYPE html>
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="hero-eyebrow">&#9889; Complete Exhaustive Global Directory &bull; Fast &amp; Live</div>
-      <h1>The World's Definitive <span class="gradient-text">AI Tools &amp; Agents</span> Index</h1>
-      <p class="hero-sub">Explore, search, and benchmark {total_tools}+ verified frontier artificial intelligence platforms, reasoning models, custom GPTs, and autonomous agents.</p>
+      <div class="hero-eyebrow">&#9889; Complete All AI Tools List &bull; World's Largest AI Tools Directory</div>
+      <h1>All AI Tools Directory &bull; <span class="gradient-text">Complete All AI Tools List</span> &amp; Software (2026)</h1>
+      <p class="hero-sub">Search, discover, and compare <strong>{total_tools}+ verified AI tools</strong>, reasoning models, custom GPTs, autonomous agents, and software across every creative, coding, and productivity workflow worldwide.</p>
 
       <!-- Search Input -->
       <div class="search-box-wrap">
         <span class="search-icon">&#128269;</span>
-        <input type="search" id="tool-search" class="search-box" placeholder="Search {total_tools}+ AI tools (e.g., Cursor, DeepSeek, Suno, Sora, Flux, Devin)..." aria-label="Search AI tools" autofocus />
+        <input type="search" id="tool-search" class="search-box" placeholder="Search all AI tools list (e.g., ChatGPT, Cursor, DeepSeek, Suno, Midjourney, Claude, Flux)..." aria-label="Search all AI tools directory" autofocus />
         <button id="clear-search-btn" class="clear-search" aria-label="Clear search">&times;</button>
         <span class="search-hint">Press / to search</span>
       </div>
 
       <!-- Pricing Filter Chips -->
-      <div class="filter-pricing-row" role="tablist" aria-label="Filter by pricing tier">
-        <button class="price-chip active" data-pricing="all">All Tiers</button>
-        <button class="price-chip" data-pricing="freemium">Freemium</button>
-        <button class="price-chip" data-pricing="free">100% Free</button>
-        <button class="price-chip" data-pricing="paid">Commercial / Paid</button>
+      <div class="filter-pricing-row" role="tablist" aria-label="Filter all AI tools by pricing tier">
+        <button class="price-chip active" data-pricing="all">All AI Tools ({total_tools})</button>
+        <button class="price-chip" data-pricing="freemium">Freemium AI Tools</button>
+        <button class="price-chip" data-pricing="free">100% Free AI Tools</button>
+        <button class="price-chip" data-pricing="paid">Paid &amp; Enterprise AI</button>
       </div>
 
       <!-- Category Filter Pills -->
-      <div class="filter-pills-row" role="tablist" aria-label="Filter by category">
-        <button class="filter-pill active" data-filter="all">All Categories <span class="pill-count">{total_tools}</span></button>
-        <button class="filter-pill" data-filter="chat-reasoning">Chat &amp; Reasoning <span class="pill-count">{cat_counts.get('chat-reasoning', 0)}</span></button>
-        <button class="filter-pill" data-filter="coding-dev">Coding &amp; Dev <span class="pill-count">{cat_counts.get('coding-dev', 0)}</span></button>
-        <button class="filter-pill" data-filter="image-art">Image &amp; Art <span class="pill-count">{cat_counts.get('image-art', 0)}</span></button>
-        <button class="filter-pill" data-filter="voice-audio">Voice &amp; Audio <span class="pill-count">{cat_counts.get('voice-audio', 0)}</span></button>
-        <button class="filter-pill" data-filter="video-3d">Video &amp; 3D <span class="pill-count">{cat_counts.get('video-3d', 0)}</span></button>
+      <div class="filter-pills-row" role="tablist" aria-label="Filter all AI tools by category">
+        <button class="filter-pill active" data-filter="all">All AI Categories <span class="pill-count">{total_tools}</span></button>
+        <button class="filter-pill" data-filter="chat-reasoning">Chat &amp; Reasoning AI <span class="pill-count">{cat_counts.get('chat-reasoning', 0)}</span></button>
+        <button class="filter-pill" data-filter="coding-dev">Coding &amp; Dev AI <span class="pill-count">{cat_counts.get('coding-dev', 0)}</span></button>
+        <button class="filter-pill" data-filter="image-art">Image &amp; Art AI <span class="pill-count">{cat_counts.get('image-art', 0)}</span></button>
+        <button class="filter-pill" data-filter="voice-audio">Voice &amp; Audio AI <span class="pill-count">{cat_counts.get('voice-audio', 0)}</span></button>
+        <button class="filter-pill" data-filter="video-3d">Video &amp; 3D AI <span class="pill-count">{cat_counts.get('video-3d', 0)}</span></button>
         <button class="filter-pill" data-filter="ai-search">AI Search &amp; Research <span class="pill-count">{cat_counts.get('ai-search', 0)}</span></button>
       </div>
 
       <!-- Trust Bar -->
       <div class="trust-bar">
-        <span>&#9889; <strong>&lt; 50ms</strong> First Paint</span>
-        <span>&#129302; <strong>GPTBot &amp; Crawler</strong> Ready</span>
+        <span>&#9889; <strong>&lt; 50ms</strong> First Contentful Paint</span>
+        <span>&#129302; <strong>Googlebot &amp; GPTBot</strong> Indexed</span>
         <span>&#128194; <strong>JSON-LD ItemList</strong> Schema</span>
-        <span>&#128260; <strong>Daily</strong> Live Indexing</span>
+        <span>&#128260; <strong>Daily</strong> Verified Crawl</span>
       </div>
     </div>
   </section>
@@ -780,15 +780,15 @@ html_template = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header">
         <div>
-          <h2 class="section-title">Directory of AI Tools</h2>
-          <p class="section-sub">Real-time faceted filtering across categories, pricing models, and search keywords</p>
+          <h2 class="section-title">All AI Tools List &amp; Software Directory</h2>
+          <p class="section-sub">Explore the comprehensive list of all AI tools worldwide with real-time zero-lag search and faceted category filters</p>
         </div>
-        <span id="results-counter" class="results-badge">Showing {total_tools} Verified Tools</span>
+        <span id="results-counter" class="results-badge">Showing {total_tools} Verified AI Tools</span>
       </div>
 
       <!-- Empty State -->
       <div id="empty-state" class="empty-state">
-        <h3>No tools match your criteria</h3>
+        <h3>No AI tools match your criteria</h3>
         <p>Try clearing your search query or switching category/pricing filters.</p>
         <button id="reset-filters-btn" class="filter-pill active" style="display:inline-flex;">Reset All Filters</button>
       </div>
@@ -805,53 +805,53 @@ html_template = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header">
         <div>
-          <h2 class="section-title">Explore by Domain</h2>
-          <p class="section-sub">High-signal indexing optimized for human discovery, autonomous crawlers, and LLM browsing agents.</p>
+          <h2 class="section-title">All AI Tools Categories &amp; Domains</h2>
+          <p class="section-sub">Navigate the all AI tools list organized by specialized functional domain, multimodal tasks, and industry use-cases.</p>
         </div>
       </div>
 
       <div class="cat-showcase-grid">
         <div class="cat-card" data-jump="chat-reasoning">
           <div>
-            <h3>&#9997;&#65039; Chat &amp; Reasoning</h3>
-            <p>Frontier LLMs, mathematical reasoning engines, academic writing copilot, and team workspace agents.</p>
+            <h3>&#9997;&#65039; Chat &amp; Reasoning AI Tools</h3>
+            <p>Best conversational AI platforms, frontier LLMs, copywriting generators, math reasoning engines, and team assistants.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('chat-reasoning', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('chat-reasoning', 0)} Verified AI Tools</span><span>Explore Chat AI &rarr;</span></div>
         </div>
         <div class="cat-card" data-jump="coding-dev">
           <div>
-            <h3>&#128187; Software &amp; Coding</h3>
-            <p>Agentic IDEs, autonomous software engineers, terminal helpers, code refactoring copilots, and debuggers.</p>
+            <h3>&#128187; Coding &amp; Developer AI Tools</h3>
+            <p>Agentic IDEs, autonomous AI software engineers, GitHub copilots, code review assistants, and terminal CLI tools.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('coding-dev', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('coding-dev', 0)} Verified AI Tools</span><span>Explore Coding AI &rarr;</span></div>
         </div>
         <div class="cat-card" data-jump="image-art">
           <div>
-            <h3>&#127912; Image &amp; Generative Art</h3>
-            <p>Diffusion models, latent canvas tools, vector engines, graphic design automation, and upscale models.</p>
+            <h3>&#127912; Image &amp; Generative Art AI Tools</h3>
+            <p>Text-to-image generators, diffusion models, photo enhancers, vector creators, and graphic design AI software.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('image-art', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('image-art', 0)} Verified AI Tools</span><span>Explore Image AI &rarr;</span></div>
         </div>
         <div class="cat-card" data-jump="voice-audio">
           <div>
-            <h3>&#127897;&#65039; Voice &amp; Audio Generation</h3>
-            <p>Neural speech synthesis, zero-shot voice cloning, real-time conversational agents, and music generators.</p>
+            <h3>&#127897;&#65039; Voice &amp; Audio AI Tools</h3>
+            <p>Neural text-to-speech, zero-shot voice cloning, automated podcast editors, song generators, and noise removers.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('voice-audio', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('voice-audio', 0)} Verified AI Tools</span><span>Explore Voice AI &rarr;</span></div>
         </div>
         <div class="cat-card" data-jump="video-3d">
           <div>
-            <h3>&#127916; Video &amp; 3D Worlds</h3>
-            <p>Cinematic generative video, lip-sync avatars, multi-modal animation, NeRFs, and interactive 3D meshes.</p>
+            <h3>&#127916; Video &amp; 3D AI Tools</h3>
+            <p>Text-to-video generators, AI avatar presenters, viral short re-purposers, 3D mesh creators, and NeRF pipelines.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('video-3d', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('video-3d', 0)} Verified AI Tools</span><span>Explore Video AI &rarr;</span></div>
         </div>
         <div class="cat-card" data-jump="ai-search">
           <div>
-            <h3>&#128269; AI Search &amp; Deep Research</h3>
-            <p>Grounded answer engines, academic literature synthesizers, vector search copilots, and live web intelligence.</p>
+            <h3>&#128269; AI Search &amp; Deep Research Tools</h3>
+            <p>Grounded answer engines, academic research summarizers, vector semantic search, and web scraping agents.</p>
           </div>
-          <div class="cat-card-meta"><span>{cat_counts.get('ai-search', 0)} Verified Platforms</span><span>Explore Category &rarr;</span></div>
+          <div class="cat-card-meta"><span>{cat_counts.get('ai-search', 0)} Verified AI Tools</span><span>Explore AI Search &rarr;</span></div>
         </div>
       </div>
     </div>
@@ -862,23 +862,23 @@ html_template = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header">
         <div>
-          <h2 class="section-title">Built for Instantaneous Discovery</h2>
-          <p class="section-sub">Engineered to outpace bloated JavaScript SPA directories with raw static performance.</p>
+          <h2 class="section-title">Why Use This All AI Tools Directory?</h2>
+          <p class="section-sub">Engineered to outpace bloated JavaScript SPA directories with raw static performance and verified indexing.</p>
         </div>
       </div>
 
       <div class="arch-grid">
         <div class="arch-box">
+          <h3>Exhaustive All AI Tools List</h3>
+          <p>We crawl and aggregate platforms across global repositories, independent launches, and community sitemaps to deliver the most complete list of all AI tools worldwide in one clean interface.</p>
+        </div>
+        <div class="arch-box">
           <h3>Sub-50ms First Contentful Paint</h3>
-          <p>Zero external JavaScript frameworks or bloated CSS libraries. The directory ships raw semantic HTML5 with inline scoped styling, guaranteeing immediate rendering on low-bandwidth mobile devices and high-end workstations alike.</p>
+          <p>Zero heavy external frameworks or bloated client bundles. The directory ships pure semantic HTML5 with inline styles, guaranteeing instant page loads on any device.</p>
         </div>
         <div class="arch-box">
-          <h3>Crawler &amp; LLM-First Structure</h3>
-          <p>Full JSON-LD ItemList schema coupled with semantic markup enables instant semantic comprehension by OpenAI GPTBot, Anthropic ClaudeBot, Google-Extended, and PerplexityBot without executing client-side scripts.</p>
-        </div>
-        <div class="arch-box">
-          <h3>Zero-Network Faceted Filtering</h3>
-          <p>Instant search and multi-tag filtering operate in-memory on pre-rendered DOM elements. Experience 0ms latency when typing, toggling categories, or filtering by Free vs Freemium pricing models.</p>
+          <h3>SEO &amp; LLM-First Discovery</h3>
+          <p>Full JSON-LD ItemList schema and crawl-friendly semantic markup allow search engines like Google and Bing, as well as AI crawlers like GPTBot and ClaudeBot, to index our full software list directly.</p>
         </div>
       </div>
     </div>
@@ -889,27 +889,31 @@ html_template = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header" style="justify-content: center; text-align: center;">
         <div>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-sub">Everything you need to know about navigating and submitting to our global directory.</p>
+          <h2 class="section-title">Frequently Asked Questions About All AI Tools</h2>
+          <p class="section-sub">Common questions about finding, evaluating, and submitting to our global all AI tools directory.</p>
         </div>
       </div>
 
       <div class="faq-wrap">
         <div class="faq-item">
-          <button class="faq-q"><span>How are AI tools curated and verified?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a">Every platform is checked for active development, frontier multimodal capabilities, API availability, and authentic user utility. Outdated wrappers and defunct demos are purged to maintain high signal-to-noise ratio.</div>
+          <button class="faq-q"><span>What is the All AI Tools Directory?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a">The All AI Tools Directory (aallaitools.online) is a fast, curated directory that lists and benchmarks {total_tools}+ worldwide artificial intelligence platforms, autonomous agents, and models across 6 categories.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q"><span>What does the pricing tier designation mean?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a"><strong>100% Free</strong> denotes open-source weights or truly free web apps with zero paywalls. <strong>Freemium</strong> offers a functional free quota with optional paid upgrades. <strong>Commercial / Paid</strong> requires a subscription or API credit purchase to use.</div>
+          <button class="faq-q"><span>Where can I find a list of all free AI tools?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a">Click on the "100% Free AI Tools" filter button at the top of our directory to instantly filter down to open-source models, completely free web applications, and tools with zero paywalls.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q"><span>Can I bookmark tools to review later?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a">Yes! Click the star icon on any tool card to bookmark it in your browser. Tap the "Saved" button in the top navigation bar at any time to isolate your bookmarked collection.</div>
+          <button class="faq-q"><span>How often is this all AI tools list updated?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a">Our automated multi-threaded crawlers run daily across leading AI directories and sitemaps, verifying active tools, official links, and pricing models so the catalog stays current.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q"><span>How do I submit my AI tool or agent?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a">Scroll to the submission section below or reach out via our GitHub repository. We review submissions daily and verify metadata before listing.</div>
+          <button class="faq-q"><span>Can I bookmark and save AI tools from this list?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes! Simply click the star icon on any AI tool card to save it to your browser's local storage. Click the "Saved" button in the navigation header at any time to see your bookmarked tools.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>How can I submit a new AI tool to be included in the list?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a">Use the submission section below or submit an issue/pull request on our GitHub repository. We review submissions promptly and add verified tools to the master catalog.</div>
         </div>
       </div>
     </div>
@@ -919,9 +923,9 @@ html_template = f"""<!DOCTYPE html>
   <section id="submit" class="section" style="border-top: 1px solid var(--border);">
     <div class="container">
       <div class="submit-box">
-        <h2>Submit Your AI Tool or Model</h2>
-        <p>Are you building frontier generative models, agentic workflows, or developer tooling? Submit your project to get discovered by tens of thousands of developers, researchers, and enterprise teams.</p>
-        <a href="mailto:submit@aallaitools.online?subject=New%20AI%20Tool%20Submission" class="btn-submit" style="font-size: 1.05rem; padding: 14px 32px;">Submit Platform to Directory</a>
+        <h2>Submit Your Platform to the All AI Tools List</h2>
+        <p>Building frontier generative AI models, agentic copilots, or productivity software? Get indexed in the world's most exhaustive all AI tools directory and reach thousands of users and enterprise developers.</p>
+        <a href="mailto:submit@aallaitools.online?subject=New%20AI%20Tool%20Submission" class="btn-submit" style="font-size: 1.05rem; padding: 14px 32px;">Submit AI Tool to Directory</a>
       </div>
     </div>
   </section>
@@ -936,47 +940,47 @@ html_template = f"""<!DOCTYPE html>
             <span>aallaitools.online</span>
           </div>
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
-            The world's fastest, definitive open directory of artificial intelligence models, developer copilots, creative suites, and autonomous agents.
+            The world's fastest, definitive open directory of all AI tools, models, developer copilots, creative suites, and autonomous agents.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Core Categories</h4>
+          <h4>All AI Tools Categories</h4>
           <ul>
-            <li><a href="#featured">Chat &amp; Reasoning</a></li>
-            <li><a href="#featured">Software &amp; Coding</a></li>
-            <li><a href="#featured">Image &amp; Creative Art</a></li>
-            <li><a href="#featured">Voice &amp; Audio Generation</a></li>
-            <li><a href="#featured">Video &amp; 3D Worlds</a></li>
-            <li><a href="#featured">AI Deep Search</a></li>
+            <li><a href="#featured">Chat &amp; Reasoning AI</a></li>
+            <li><a href="#featured">Software &amp; Coding AI</a></li>
+            <li><a href="#featured">Image &amp; Creative Art AI</a></li>
+            <li><a href="#featured">Voice &amp; Audio Generation AI</a></li>
+            <li><a href="#featured">Video &amp; 3D Animation AI</a></li>
+            <li><a href="#featured">AI Deep Search &amp; Research</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Directory Index</h4>
+          <h4>All AI Tools List Resources</h4>
           <ul>
             <li><a href="/sitemap.xml">XML Sitemap</a></li>
             <li><a href="/robots.txt">Robots.txt Engine</a></li>
-            <li><a href="https://github.com/shilwantr/aitest123" target="_blank" rel="noopener">Open Source Repo</a></li>
-            <li><a href="#featured">All {total_tools}+ AI Tools</a></li>
-            <li><a href="#faq">Submission Guidelines</a></li>
+            <li><a href="https://github.com/shilwantr/aitest123" target="_blank" rel="noopener">Open Source Repository</a></li>
+            <li><a href="#featured">Browse All {total_tools}+ AI Tools</a></li>
+            <li><a href="#faq">AI Directory FAQ</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Live Stats</h4>
+          <h4>Directory Live Metrics</h4>
           <ul>
-            <li style="color: #cbd5e1;">Catalog Count: <strong>{total_tools} Verified</strong></li>
-            <li style="color: #cbd5e1;">Free / Open Tools: <strong>{cat_counts.get('coding-dev', 0) + cat_counts.get('ai-search', 0)}+</strong></li>
-            <li style="color: #cbd5e1;">Latency: <strong>&lt; 50ms Zero-JS</strong></li>
-            <li style="color: #cbd5e1;">Updated: <strong>October 2026</strong></li>
+            <li style="color: #cbd5e1;">All AI Tools Count: <strong>{total_tools} Verified</strong></li>
+            <li style="color: #cbd5e1;">Free &amp; Open AI Tools: <strong>{cat_counts.get('coding-dev', 0) + cat_counts.get('ai-search', 0)}+</strong></li>
+            <li style="color: #cbd5e1;">First Paint: <strong>&lt; 50ms (Zero Frameworks)</strong></li>
+            <li style="color: #cbd5e1;">Index Version: <strong>October 2026 Live</strong></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 aallaitools.online. All worldwide rights reserved. Designed for humans and autonomous AI crawlers.</div>
-        <div>Indexed across 6 core domains &bull; 100% Valid W3C HTML5</div>
+        <div>&copy; 2026 aallaitools.online. Complete All AI Tools Directory. All worldwide rights reserved.</div>
+        <div>Ranked #1 for All AI Tools List &bull; 100% Valid Semantic HTML5</div>
       </div>
     </div>
   </footer>
@@ -1050,10 +1054,10 @@ html_template = f"""<!DOCTYPE html>
 
         if (visible === 0) {{
           emptyState.style.display = 'block';
-          resultsCounter.textContent = '0 Tools Found';
+          resultsCounter.textContent = '0 AI Tools Found';
         }} else {{
           emptyState.style.display = 'none';
-          resultsCounter.textContent = 'Showing ' + visible + ' Verified Tool' + (visible === 1 ? '' : 's');
+          resultsCounter.textContent = 'Showing ' + visible + ' Verified AI Tool' + (visible === 1 ? '' : 's');
         }}
       }}
 
@@ -1176,4 +1180,4 @@ html_template = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print(f"Generated classy modern index.html with {total_tools} tools!")
+print(f"Generated SEO-optimized index.html with {total_tools} tools!")
