@@ -41,22 +41,32 @@ schema_json = json.dumps({
 
 cards_html = []
 for t in tools:
-    search_blob = f"{t['name']} {t['subcategory']} {t['description']} {t['category_pill']} {t['pricing']}".lower()
-    price_class = t['pricing'].lower().replace(' ', '-')
-    card = f"""        <article class="tool-card" data-category="{t['category_slug']}" data-pricing="{price_class}" data-name="{html.escape(t['name'])}" data-search="{html.escape(search_blob)}">
+    subcat = t.get('subcategory') or t.get('category_section') or t.get('category_pill') or 'AI Tool'
+    desc = t.get('description', '')
+    name = t.get('name', 'AI Platform')
+    pricing = t.get('pricing', 'Freemium')
+    pill = t.get('category_pill', 'AI Tools')
+    cat_slug = t.get('category_slug', 'chat-reasoning')
+    color = t.get('color', '#4F46E5')
+    badge = t.get('badge', 'AI')
+    url = t.get('url', '#')
+
+    search_blob = f"{name} {subcat} {desc} {pill} {pricing}".lower()
+    price_class = pricing.lower().replace(' ', '-')
+    card = f"""        <article class="tool-card" data-category="{cat_slug}" data-pricing="{price_class}" data-name="{html.escape(name)}" data-search="{html.escape(search_blob)}">
           <div class="card-top">
-            <div class="tool-badge" style="background:{t['color']}">{html.escape(t['badge'])}</div>
+            <div class="tool-badge" style="background:{color}">{html.escape(badge)}</div>
             <div class="top-meta">
-              <span class="price-pill price-{price_class}">{html.escape(t['pricing'])}</span>
-              <button class="bookmark-btn" aria-label="Bookmark {html.escape(t['name'])}" data-tool="{html.escape(t['name'])}">&#9734;</button>
+              <span class="price-pill price-{price_class}">{html.escape(pricing)}</span>
+              <button class="bookmark-btn" aria-label="Bookmark {html.escape(name)}" data-tool="{html.escape(name)}">&#9734;</button>
             </div>
           </div>
-          <span class="tool-subcat">{html.escape(t['subcategory'])}</span>
-          <h3 class="tool-name">{html.escape(t['name'])}</h3>
-          <p class="tool-desc">{html.escape(t['description'])}</p>
+          <span class="tool-subcat">{html.escape(subcat)}</span>
+          <h3 class="tool-name">{html.escape(name)}</h3>
+          <p class="tool-desc">{html.escape(desc)}</p>
           <div class="card-bottom">
-            <span class="cat-pill">{html.escape(t['category_pill'])}</span>
-            <a href="{html.escape(t['url'])}" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Tool &rarr;</a>
+            <span class="cat-pill">{html.escape(pill)}</span>
+            <a href="{html.escape(url)}" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Tool &rarr;</a>
           </div>
         </article>"""
     cards_html.append(card)
