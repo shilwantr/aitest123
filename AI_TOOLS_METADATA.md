@@ -1,9 +1,9 @@
 # Complete AI Tools Metadata Catalog (`aallaitools.online`)
 
 Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XML sitemaps, and all 414 `aitoolsdirectory.com` entries.
-**Total Verified AI Tools Indexed**: `962`
+**Total Verified AI Tools Indexed**: `976`
 
-## Video & 3D (`🎥 Video & Motion FX` | 235 Tools)
+## Video & 3D (`🎥 Video & Motion FX` | 240 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -242,8 +242,13 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **LA** | `#0F172A` | [Lately](https://www.lately.ai/?via=aitoolsdirectory-com) | Paid | Video & 3D | Repurpose articles, podcasts and videos into social posts with Lately. Train a brand voice, schedule content, review analytics and manage employee advocacy workflows | `https://www.lately.ai/?via=aitoolsdirectory-com` |
 | **HA** | `#0D9488` | [HeyFish AI](https://aitoolsdirectory.com/tool/heyfish-ai) | Paid | Video & 3D | HeyFish generates professional UGC-style video ads using AI digital humans. 70+ languages, dual-person dialogue, voice cloning — no studio or actors required. | `https://aitoolsdirectory.com/tool/heyfish-ai` |
 | **SA** | `#0284C7` | [Superscale AI](https://superscale.ai/) | Freemium | Video & 3D | Superscale AI turns a product URL into a complete ad campaign with scripts, UGC videos, and creatives in multiple formats. 300+ AI characters, 20+ languages. Free cr | `https://superscale.ai/` |
+| **KI** | `#0284C7` | [KIE](https://aitoolsdirectory.com/tool/kie) | Freemium | Video & 3D | KIE provides a unified API for image, video, audio, and LLM models with free trial credits, shared billing, model switching, and task logs or webhooks for production | `https://aitoolsdirectory.com/tool/kie` |
+| **DA** | `#2563EB` | [Designs.ai: AI Creative Agents for Design, Video & Slid](https://aitoolsdirectory.com/tool/designs_ai) | Freemium | Video & 3D | Create branded images, videos, presentations, copy and audio with Designs.ai. Brief specialist AI agents, select models and apply your brand settings. | `https://aitoolsdirectory.com/tool/designs_ai` |
+| **SY** | `#059669` | [Syntopia](https://aitoolsdirectory.com/tool/syntopia) | Freemium | Video & 3D | Syntopia creates interactive AI avatars that stream your products around the clock on TikTok Shop, YouTube, Taobao, and more. Clone your appearance, script responses | `https://aitoolsdirectory.com/tool/syntopia` |
+| **AD** | `#10A37F` | [AdGPT](https://aitoolsdirectory.com/tool/adgpt) | Paid | Video & 3D | AdGPT generates UGC videos, static ads, and Google Search campaigns from a product URL. Direct publishing to Meta, TikTok, and Google. One-dollar trial available. | `https://aitoolsdirectory.com/tool/adgpt` |
+| **MI** | `#E11D48` | [Media Io](https://aitoolsdirectory.com/tool/media_io) | Freemium | Video & 3D | Verified AI platform (mediaio ai video image music) for automated workflows and productivity. | `https://aitoolsdirectory.com/tool/media_io` |
 
-## Voice & Audio (`🎙️ Voice & Audio Synthesis` | 94 Tools)
+## Voice & Audio (`🎙️ Voice & Audio Synthesis` | 95 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -341,8 +346,9 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **NA** | `#0284C7` | [Netus AI](https://netus.ai/) | Freemium | Voice & Audio | Netus AI: Fine-tune paraphrasing with your own voice while bypassing plagiarism & AI detection. Integrate advanced technology for efficient, high-quality. | `https://netus.ai/` |
 | **BF** | `#D97706` | [Brain FM](https://aitoolsdirectory.com/tool/brain-fm) | Paid | Voice & Audio | Brain FM: Brain.fm provides scientifically proven, patented AI-generated music for focus, relaxation, and sleep. The tailored music stimulates the brain while. | `https://aitoolsdirectory.com/tool/brain-fm` |
 | **AU** | `#4F46E5` | [Audo](https://audo.ai/?via=aitoolsdirectory-com) | Freemium | Voice & Audio | Audo Studio rapidly enhances audio by eliminating background noise, reducing echoes, and adjusting volume, providing great results for a wide range of users. | `https://audo.ai/?via=aitoolsdirectory-com` |
+| **VW** | `#0D9488` | [VoiceAIWrapper: White-Label Voice AI Platform for Agenc](https://aitoolsdirectory.com/tool/voiceaiwrapper) | Freemium | Voice & Audio | Connect multiple voice AI providers in one dashboard. VoiceAIWrapper gives agencies full white-label control, automated billing, and built-in campaign tools. Starts  | `https://aitoolsdirectory.com/tool/voiceaiwrapper` |
 
-## Image & Art (`🎨 Image & Visual Arts` | 175 Tools)
+## Image & Art (`🎨 Image & Visual Arts` | 176 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -521,8 +527,9 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **ME** | `#059669` | [Merlin](https://aitoolsdirectory.com/tool/merlin) | Paid | Image & Art | Merlin AI is an AI Assistant app and Chrome extension that brings AI-powered assistance to your browser, helping you create social media content, summarize. | `https://aitoolsdirectory.com/tool/merlin` |
 | **SL** | `#10A37F` | [SlidesAI](https://www.slidesai.io/) | Freemium | Image & Art | SlidesAI is a Chrome extension that converts text or topics into full Google Slides presentations. Includes themes, image generation, rephrasing, and multilingual su | `https://www.slidesai.io/` |
 | **IV** | `#4F46E5` | [IVprompt](https://aitoolsdirectory.com/tool/ivprompt) | Freemium | Image & Art | Explore the best IVPrompt alternatives for turning images into AI prompts for Midjourney, DALL-E, Flux, Sora, Runway, and other creative tools. | `https://aitoolsdirectory.com/tool/ivprompt` |
+| **PA** | `#10A37F` | [Pikzels: AI YouTube Thumbnail Maker & Title Generator](https://aitoolsdirectory.com/tool/pikzels) | Freemium | Image & Art | Create YouTube thumbnails and titles with Pikzels. Generate designs, reuse your face and style, edit with prompts, and analyze thumbnail and title combinations. | `https://aitoolsdirectory.com/tool/pikzels` |
 
-## Coding & Dev (`💻 Software & Coding` | 214 Tools)
+## Coding & Dev (`💻 Software & Coding` | 216 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -740,8 +747,10 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **SI** | `#4F46E5` | [Sitepaige](https://aitoolsdirectory.com/tool/sitepaige) | Freemium | Coding & Dev | AI assistant generates complete websites including frontend, backend, database, and APIs from natural language. Export code free with full ownership or use managed h | `https://aitoolsdirectory.com/tool/sitepaige` |
 | **PL** | `#4F46E5` | [Plagiashield](https://aitoolsdirectory.com/tool/plagiashield) | Paid | Coding & Dev | Plagiashield: A plagiarism checker with a specialized ChatGPT detection Chrome extension. Monitor thousands of web pages, identify copycats, and generate DMCA. | `https://aitoolsdirectory.com/tool/plagiashield` |
 | **AI** | `#0284C7` | [AIPRM](https://www.aiprm.com/?via=aitoolsdirectory-com) | Paid | Coding & Dev | AIPRM provides reusable prompt libraries, private and team prompts, variables and browser extensions for ChatGPT, Claude and other AI tools. | `https://www.aiprm.com/?via=aitoolsdirectory-com` |
+| **AB** | `#059669` | [Ask BONBON](https://askbonbon.com/AIXPLORIA) | Free | Coding & Dev | Ask BONBON is an AI assistant for electricians that makes it easier to search the NEC and CEC codes, perform technical calculations, and prepare for inspections | `https://askbonbon.com/AIXPLORIA` |
+| **MA** | `#0284C7` | [Madgicx: AI Meta Advertising Management and Automation](https://aitoolsdirectory.com/tool/madgicx) | Freemium | Coding & Dev | Manage Meta advertising with AI account audits, automated rules, creative analysis, bulk ad launching, performance reporting, and optional server-side tracking. | `https://aitoolsdirectory.com/tool/madgicx` |
 
-## AI Search (`🔍 Research & Deep Search` | 91 Tools)
+## AI Search (`🔍 Research & Deep Search` | 93 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -836,8 +845,10 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **MA** | `#2563EB` | [Monic AI](https://aitoolsdirectory.com/tool/monic-ai) | Freemium | AI Search | Monic AI: Generate quizzes, flashcards, and summaries in seconds using Monic AI. Chat with AI, effortlessly upload files and enjoy personalized learning. | `https://aitoolsdirectory.com/tool/monic-ai` |
 | **SG** | `#0D9488` | [SEO GPT](https://aitoolsdirectory.com/tool/seo-gpt) | Freemium | AI Search | SEO GPT: The AI-driven marketing & SEO tool you | `https://aitoolsdirectory.com/tool/seo-gpt` |
 | **DU** | `#4F46E5` | [Durable](https://durable.com/?utm_source=aitoolsdirectory) | Freemium | AI Search | Durable creates AI generated business websites and includes CRM, bookings, marketing, content generation, and local search tools for small service businesses. | `https://durable.com/?utm_source=aitoolsdirectory` |
+| **HA** | `#D97706` | [HypeAuditor: AI Influencer Discovery & Audience Analyti](https://aitoolsdirectory.com/tool/hypeauditor) | Freemium | AI Search | Find influencers with AI, check audience quality and US demographics, and manage outreach, campaigns, and ecommerce sales tracking with HypeAuditor. | `https://aitoolsdirectory.com/tool/hypeauditor` |
+| **SH** | `#2563EB` | [ShopOS](https://shopos.ai/?utm_source=aitoolsdirectory) | Freemium | AI Search | ShopOS gives ecommerce and DTC teams AI coworkers for creative production, product content, ads, email, SEO, research, brand memory, and Shopify operations. | `https://shopos.ai/?utm_source=aitoolsdirectory` |
 
-## Chat & Reasoning (`✍️ Generative Writing` | 153 Tools)
+## Chat & Reasoning (`✍️ Generative Writing` | 156 Tools)
 
 | Badge | Color | Tool Name | Pricing | Category | Description | Official URL |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -994,3 +1005,6 @@ Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XM
 | **PR** | `#D97706` | [PromptLayer](https://promptlayer.com/?via=aitoolsdirectory-com) | Paid | Chat & Reasoning | PromptLayer gives AI teams prompt versioning, evaluations, release controls, request logging and agent observability in one platform. | `https://promptlayer.com/?via=aitoolsdirectory-com` |
 | **ON** | `#0F172A` | [Oniichan](https://aitoolsdirectory.com/tool/oniichan) | Freemium | Chat & Reasoning | Oniichan generates manga panels and anime characters from text prompts. Includes OC makers for Naruto, Genshin, Demon Slayer and 15+ franchises. Free plan available. | `https://aitoolsdirectory.com/tool/oniichan` |
 | **EV** | `#7C3AED` | [Endless VN](https://endlessvn.io/?via=aitoolsdirectory-com) | Freemium | Chat & Reasoning | Endless VN: A visual novel-based game in which the characters, dialog, and story are generated for you as you play. | `https://endlessvn.io/?via=aitoolsdirectory-com` |
+| **DB** | `#059669` | [Dots By Openai](https://chatgpt.com/?q=Give%20me%20a%20clear%20and%20concise%20overview%20of%20Dots%20by%20OpenAI.%20Explain%20what%20this%20AI%20tool%20does%2C%20who%20it%20is%20best%20for%2C%20its%20main%20features%2C%20pricing%20model%2C%20strengths%2C%20weaknesses%2C%20and%20possible%20alternatives.) | Free | Chat & Reasoning | Dots by OpenAI is an autonomous agent that can track goals, use your apps, and carry out tasks using its own cloud-based computer. | `https://chatgpt.com/?q=Give%20me%20a%20clear%20and%20concise%20overview%20of%20Dots%20by%20OpenAI.%20Explain%20what%20this%20AI%20tool%20does%2C%20who%20it%20is%20best%20for%2C%20its%20main%20features%2C%20pricing%20model%2C%20strengths%2C%20weaknesses%2C%20and%20possible%20alternatives.` |
+| **BR** | `#0F172A` | [Brand24](https://aitoolsdirectory.com/tool/brand24) | Paid | Chat & Reasoning | Monitor brand mentions, analyze sentiment, explore conversation topics and ask Brand24’s AI assistant about campaigns, competitors and changes in online coverage. | `https://aitoolsdirectory.com/tool/brand24` |
+| **SE** | `#0284C7` | [Segwise](https://segwise.ai/?utm_source=aitoolsdirectory) | Paid | Chat & Reasoning | Segwise connects creative data from advertising networks, tags ad elements with multimodal AI, tracks fatigue, and generates new creative variations from campaign pa | `https://segwise.ai/?utm_source=aitoolsdirectory` |
