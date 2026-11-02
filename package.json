@@ -1,10 +1,11 @@
 {
-  "name": "aallaitools-online",
+  "name": "allaitools-online",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
+    "generate": "python scripts/generate_all_pages.py",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "echo 'No lint errors'"

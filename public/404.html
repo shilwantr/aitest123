@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found (404) | All AI Tools</title>
+  <meta name="description" content="The requested AI tool or page could not be found. Search 960+ artificial intelligence tools on All AI Tools." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234F46E5%22/><text y=%2268%22 x=%2250%22 font-family=%22system-ui,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>AI</text></svg>" />
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-card: #0f1626;
+      --border: rgba(255, 255, 255, 0.08);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; }
+    .box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 48px 32px; max-width: 600px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .code { font-size: 4rem; font-weight: 900; background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+    h1 { font-size: 1.6rem; margin-bottom: 12px; }
+    p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; }
+    .search-input { width: 100%; padding: 14px 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 12px; color: #fff; font-size: 1rem; margin-bottom: 20px; outline: none; }
+    .search-input:focus { border-color: var(--accent); }
+    .btn { display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 10px; text-decoration: none; }
+    .quick-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .quick-link { background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; color: #cbd5e1; text-decoration: none; border: 1px solid var(--border); }
+    .quick-link:hover { background: rgba(99,102,241,0.2); color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="code">404</div>
+    <h1>AI Tool or Page Not Found</h1>
+    <p>The page you are looking for might have been moved, renamed, or is temporarily unavailable. Search 960+ verified AI tools below:</p>
+    <input type="search" id="search404" class="search-input" placeholder="Search AI tools (e.g. ChatGPT, Claude, Midjourney)..." />
+    <br />
+    <a href="/" class="btn">&larr; Return to All AI Tools</a>
+    <div class="quick-links">
+      <a href="/?category=chat-reasoning" class="quick-link">Chat &amp; Reasoning</a>
+      <a href="/?category=coding-dev" class="quick-link">Coding &amp; Dev</a>
+      <a href="/?category=image-art" class="quick-link">Image &amp; Art</a>
+      <a href="/?category=video-3d" class="quick-link">Video &amp; 3D</a>
+      <a href="/?category=voice-audio" class="quick-link">Voice &amp; Audio</a>
+      <a href="/?category=ai-search" class="quick-link">AI Search</a>
+    </div>
+  </div>
+  <script>
+    var input = document.getElementById('search404');
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && input.value.trim()) {
+        window.location.href = '/?q=' + encodeURIComponent(input.value.trim());
+      }
+    });
+  </script>
+</body>
+</html>

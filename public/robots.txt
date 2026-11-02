@@ -1,7 +1,48 @@
-# Robots.txt for http://allaitools.online
-# Optimized for Search Engines and AI / GPT Web Crawlers
+# Robots.txt for https://www.allaitools.online/
+# Explicitly allowing all search engine web crawlers and AI agents
 
 User-agent: *
+Allow: /
+
+# Google Search, Google Images, Googlebot News, and Gemini Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Yahoo & DuckDuckGo
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Baidu & Yandex
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 # OpenAI Crawlers (GPT-4, SearchGPT, ChatGPT Browsing)
@@ -21,31 +62,27 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
 # Perplexity AI Search Crawler
 User-agent: PerplexityBot
 Allow: /
 
-# Google Search & Gemini Extended
-User-agent: Googlebot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-# Microsoft Bing & Copilot
-User-agent: Bingbot
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# Common Crawl (Used by training datasets & LLMs)
+# Common Crawl (Used by open training datasets & LLMs)
 User-agent: CCBot
 Allow: /
 
-# Sitemap Location
-Sitemap: http://allaitools.online/sitemap.xml
+# Meta / Facebook
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Twitter / X
+User-agent: Twitterbot
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://www.allaitools.online/sitemap.xml

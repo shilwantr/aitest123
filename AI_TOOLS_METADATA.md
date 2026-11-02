@@ -1,4 +1,4 @@
-# Complete AI Tools Metadata Catalog (`aallaitools.online`)
+# Complete AI Tools Metadata Catalog (`https://www.allaitools.online/`)
 
 Master dataset combining global flagship AI platforms, all 49 `aixploria.com` XML sitemaps, and all 414 `aitoolsdirectory.com` entries.
 **Total Verified AI Tools Indexed**: `976`
