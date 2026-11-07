@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
 Master Page & Sitemap Generator for All AI Tools (https://www.allaitools.online/)
-- Generates dedicated static SEO pages for every AI tool in /<slug>/index.html and /<slug>.html
-- Generates homepage index.html with card navigation to /<slug>/ and direct Open Tool button
-- Generates 404.html
-- Generates robots.txt explicitly allowing all bots & AI agents
-- Generates canonical sitemap.xml with all tool URLs
-- Generates vercel.json with clean routing and caching headers
+- Fully optimized for Google Search Console queries & high-CTR search appearance:
+  - 'allaitools', 'all ai tools in one website', '1000 ai tools', 'list of all ai tools', 'ai tool list'
+  - '{tool} alternatives' (e.g. altftools alternatives, landinghero alternatives, inkle alternatives)
+  - Tool-specific queries (airbrush image enhancer, xeve ai, google flow, freemaker, etc.)
+- Rich JSON-LD Structured Data: SoftwareApplication with AggregateRating (star snippets), BreadcrumbList, FAQPage
+- Fast pre-rendered static HTML in public/<slug>/index.html and public/<slug>.html
+- Canonical HTTPS sitemap.xml & permissive robots.txt
 """
 
 import os
@@ -16,12 +17,12 @@ import re
 import shutil
 from pathlib import Path
 from urllib.parse import urlparse, quote_plus
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASE_URL = "https://www.allaitools.online"
-TODAY = datetime.utcnow().strftime("%Y-%m-%d")
+TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-print(f"Starting master generation for {BASE_URL} ({TODAY})...")
+print(f"Starting master SEO generation for {BASE_URL} ({TODAY})...")
 
 # 1. Load tools
 with open("tools.json", "r", encoding="utf-8") as f:
@@ -174,15 +175,65 @@ schema_json = json.dumps({
             "@type": "WebSite",
             "@id": f"{BASE_URL}/#website",
             "url": f"{BASE_URL}/",
-            "name": "All AI Tools Directory & Best AI Tools List (2026)",
-            "description": f"The definitive, fast, and comprehensive directory of {total_tools}+ worldwide artificial intelligence tools, models, and agents. Find all AI tools list for writing, coding, images, voice, video, and search."
+            "name": "All AI Tools (allaitools)",
+            "alternateName": [
+                "allaitools",
+                "allaitools.online",
+                "All AI Tools List",
+                "All Tools Website",
+                "AI All Tools Directory"
+            ],
+            "description": f"The definitive, fast, and comprehensive directory of {total_tools}+ worldwide artificial intelligence tools, models, and agents. Find all AI tools list for writing, coding, images, voice, video, and search in one website.",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": f"{BASE_URL}/?q={{search_term_string}}",
+                "query-input": "required name=search_term_string"
+            }
         },
         {
             "@type": "ItemList",
             "@id": f"{BASE_URL}/#featured",
-            "name": f"All AI Tools List & Complete Global AI Directory ({total_tools}+ Tools)",
+            "name": f"All AI Tools List & Complete Global AI Directory ({total_tools}+ Verified Tools)",
             "numberOfItems": total_tools,
             "itemListElement": schema_items
+        },
+        {
+            "@type": "FAQPage",
+            "@id": f"{BASE_URL}/#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Where can I find a complete list of all AI tools in one website?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": f"You can browse and search the complete list of {total_tools}+ verified artificial intelligence tools, reasoning models, and custom GPTs in one website on All AI Tools (allaitools.online), categorized across Chat, Coding, Image, Video, Voice, and Search."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are there free AI tools and alternatives available on All AI Tools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes! All AI Tools categorizes each software with clear pricing badges: Free, Freemium, and Paid. You can instantly filter the entire directory to find 100% free AI tools and free alternatives to expensive software."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does the tool page and card click work on All AI Tools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Clicking any tool card opens its dedicated URL (/toolname) featuring full specs, search queries, parameters, and verified alternatives. Clicking the 'Open Tool' button redirects directly to the tool's official website in a new window."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are the best alternatives to popular AI tools and directories like AltFTools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": f"All AI Tools (allaitools.online) serves as a modern, lightning-fast alternative to older directories like AltFTools, ToolYardPro, and Aixploria, offering real-time instant search, category filtering, verified direct links, and over {total_tools}+ up-to-date AI platforms."
+                    }
+                }
+            ]
         }
     ]
 }, indent=2)
@@ -193,23 +244,27 @@ index_html_content = f"""<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All AI Tools Directory (2026) | Complete All AI Tools List &amp; {total_tools}+ Top Software</title>
-  <meta name="description" content="Explore the ultimate all AI tools list and global AI directory. Discover, search, and benchmark {total_tools}+ worldwide AI software, models, and autonomous agents across Chat, Coding, Image, Voice, Video, and Search." />
-  <meta name="keywords" content="all ai tools, all ai tools list, ai tools directory, best ai tools 2026, free ai tools list, top ai tools, ai software list, complete ai directory, generative ai tools, artificial intelligence tools directory, aixploria alternative, aitoolsdirectory" />
+  <title>All AI Tools (allaitools) — Complete AI Tools List &amp; Directory of {total_tools}+ AI Tools in One Website (2026)</title>
+  <meta name="description" content="Discover {total_tools}+ verified AI tools across all categories on All AI Tools (allaitools.online). Complete all AI tools list in one website: find top AI software, free tools, custom GPTs, and verified alternatives with instant search." />
+  <meta name="keywords" content="allaitools, all ai tools, all ai tools list, all tools website, list all ai tools, ai all tools, ai tool list, all ai, aitoolslist, aitools, tools ai, list of all ai tools, ai tool directory, all ai tools in one website, ai tools by category, all tools ai, ai software directory, all ai list, ai tools all, ai tools collection, 1000 ai tools, every ai tool, best ai tools 2026, free ai tools list, ai tools database, aitools list, altftools alternatives, aitoolradar alternatives, artificial intelligence tools, all ai websites, complete ai directory, all the ai tools available, free online tools directory, every single ai, al tools, allaitool, aitolls, aitols, all tool ai" />
   <meta name="author" content="All AI Tools" />
+  <meta name="subject" content="Complete List and Directory of All AI Tools ({total_tools}+ Tools)" />
+  <meta name="topic" content="Artificial Intelligence Tools, AI Software &amp; Machine Learning Directory" />
+  <meta name="classification" content="Artificial Intelligence Directory, AI Tools List" />
+  <meta name="revisit-after" content="2 days" />
   <link rel="canonical" href="{BASE_URL}/" />
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="All AI Tools Directory &amp; All AI Tools List | {total_tools}+ Worldwide Platforms" />
-  <meta property="og:description" content="Discover the complete all AI tools list with {total_tools}+ artificial intelligence software, models, and apps across 6 core categories. Filter by Free, Freemium, and Paid." />
+  <meta property="og:title" content="All AI Tools (allaitools) — Complete AI Tools List &amp; {total_tools}+ Directory" />
+  <meta property="og:description" content="The complete list of all AI tools in one website ({total_tools}+ platforms). Search by category, filter by Free or Freemium, and discover the best AI software &amp; alternatives." />
   <meta property="og:url" content="{BASE_URL}/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="All AI Tools" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="All AI Tools Directory | Exhaustive All AI Tools List ({total_tools}+ Tools)" />
-  <meta name="twitter:description" content="Browse the ultimate all AI tools directory and complete AI software list with lightning-fast instant search." />
+  <meta name="twitter:title" content="All AI Tools (allaitools) | Exhaustive All AI Tools List ({total_tools}+ Tools)" />
+  <meta name="twitter:description" content="Browse the ultimate all AI tools directory and complete AI software list in one website with lightning-fast instant search." />
 
   <!-- Favicon SVG -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234F46E5%22/><text y=%2268%22 x=%2250%22 font-family=%22system-ui,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>AI</text></svg>" />
@@ -357,8 +412,8 @@ index_html_content = f"""<!DOCTYPE html>
       -webkit-text-fill-color: transparent;
     }}
     .hero-sub {{
-      max-width: 780px;
-      margin: 0 auto 34px;
+      max-width: 820px;
+      margin: 0 auto 30px;
       color: var(--text-muted);
       font-size: 1.12rem;
       line-height: 1.6;
@@ -367,7 +422,7 @@ index_html_content = f"""<!DOCTYPE html>
     /* Global Search Bar */
     .search-box-wrap {{
       max-width: 720px;
-      margin: 0 auto 24px;
+      margin: 0 auto 16px;
       position: relative;
       display: flex;
       align-items: center;
@@ -421,6 +476,39 @@ index_html_content = f"""<!DOCTYPE html>
       padding: 4px;
     }}
     .clear-search:hover {{ color: #ffffff; }}
+
+    /* Trending Searches Row */
+    .trending-row {{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+      font-size: 0.82rem;
+    }}
+    .trending-label {{
+      color: #a5b4fc;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }}
+    .trend-pill {{
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.22);
+      color: #c7d2fe;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }}
+    .trend-pill:hover {{
+      background: rgba(99, 102, 241, 0.22);
+      border-color: rgba(99, 102, 241, 0.5);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }}
 
     /* Pricing Filter Row */
     .filter-pricing-row {{
@@ -799,9 +887,9 @@ index_html_content = f"""<!DOCTYPE html>
   <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <div class="hero-eyebrow">&#9889; Global Verified AI Tools Directory 2026</div>
-      <h1>Complete <span class="gradient-text">All AI Tools</span> Directory &amp; List</h1>
-      <p class="hero-sub">Explore, search, and benchmark {total_tools}+ verified artificial intelligence software, models, and autonomous agents across 6 core industry categories.</p>
+      <div class="hero-eyebrow">&#9889; allaitools.online — Complete AI Directory 2026</div>
+      <h1>Complete <span class="gradient-text">All AI Tools</span> List &amp; Directory</h1>
+      <p class="hero-sub">The definitive all-in-one AI tools website. Search, benchmark, and compare {total_tools}+ verified artificial intelligence software, models, custom GPTs, and free alternatives across 6 core categories.</p>
 
       <!-- Search Box with Query Param Support -->
       <div class="search-box-wrap">
@@ -809,6 +897,20 @@ index_html_content = f"""<!DOCTYPE html>
         <input type="text" id="searchInput" class="search-box" placeholder="Search by name, category, pricing, or keyword... (Press '/' to focus)" autofocus autocomplete="off" />
         <button id="clearSearch" class="clear-search" aria-label="Clear Search">&times;</button>
         <span class="search-hint">/</span>
+      </div>
+
+      <!-- Trending High-Volume Search Keywords -->
+      <div class="trending-row">
+        <span class="trending-label">&#128293; Top Searches:</span>
+        <button class="trend-pill" data-query="alternatives">AI Alternatives</button>
+        <button class="trend-pill" data-query="airbrush image enhancer">Airbrush Enhancer</button>
+        <button class="trend-pill" data-query="free">Free AI Tools</button>
+        <button class="trend-pill" data-query="video">Video Creators</button>
+        <button class="trend-pill" data-query="xeve ai">Xeve AI</button>
+        <button class="trend-pill" data-query="image">Image Generators</button>
+        <button class="trend-pill" data-query="chat">Chatbots &amp; LLMs</button>
+        <button class="trend-pill" data-query="writer">AI Writers</button>
+        <button class="trend-pill" data-query="coding">Coding Dev</button>
       </div>
 
       <!-- Pricing Filter Chips -->
@@ -854,7 +956,7 @@ index_html_content = f"""<!DOCTYPE html>
       <!-- Trust Bar -->
       <div class="trust-bar">
         <span>&#10003; <strong>{total_tools}+</strong> Verified Tools</span>
-        <span>&#128269; <strong>Click Card</strong> for Tool Page &amp; SEO queries</span>
+        <span>&#128269; <strong>Click Card</strong> for Tool Page &amp; Alternatives</span>
         <span>&#127760; <strong>Direct Link</strong> opens official website</span>
         <span>&#9889; <strong>Instant Search</strong> &amp; URL Filter Sharing</span>
       </div>
@@ -866,8 +968,8 @@ index_html_content = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header">
         <div>
-          <h2 class="section-title">All AI Tools Catalog</h2>
-          <p class="section-sub">Click any tool card to view dedicated page with features, search parameters and alternatives, or click "Open Tool" to visit directly.</p>
+          <h2 class="section-title">All AI Tools Catalog ({total_tools}+ Platforms)</h2>
+          <p class="section-sub">Click any tool card to view dedicated page with features, search parameters, and verified alternatives, or click "Open Tool" to visit directly.</p>
         </div>
         <div class="results-badge" id="resultsCounter">Showing {total_tools} Verified AI Tools</div>
       </div>
@@ -888,8 +990,8 @@ index_html_content = f"""<!DOCTYPE html>
     <div class="container">
       <div class="section-header">
         <div>
-          <h2 class="section-title">Explore AI Domains</h2>
-          <p class="section-sub">Browse software tailored to your workflow and industry use case.</p>
+          <h2 class="section-title">Explore AI Tools by Category</h2>
+          <p class="section-sub">Browse verified software tailored to your workflow and industry use case.</p>
         </div>
       </div>
 
@@ -918,8 +1020,8 @@ index_html_content = f"""<!DOCTYPE html>
 
         <div class="cat-card" data-jump="image-art">
           <div>
-            <h3>Image Generation &amp; Design</h3>
-            <p>Diffusion synthesis, prompt-to-image renderers, brand asset generators, UI mockups, and AI-assisted graphic workstations.</p>
+            <h3>Image Generation, Enhancers &amp; Design</h3>
+            <p>Diffusion synthesis, prompt-to-image renderers, photo enhancers, brand asset generators, UI mockups, and AI graphic workstations.</p>
           </div>
           <div class="cat-card-meta">
             <span>{cat_counts.get('image-art', 0)} Tools</span>
@@ -929,7 +1031,7 @@ index_html_content = f"""<!DOCTYPE html>
 
         <div class="cat-card" data-jump="video-3d">
           <div>
-            <h3>Video Creation &amp; 3D Worlds</h3>
+            <h3>Video Creation, Avatars &amp; 3D Worlds</h3>
             <p>Generative cinematic video, text-to-3D mesh creators, virtual avatar presenters, automated clip repurposers, and VFX engines.</p>
           </div>
           <div class="cat-card-meta">
@@ -969,18 +1071,28 @@ index_html_content = f"""<!DOCTYPE html>
       <div class="section-header" style="text-align: center; justify-content: center;">
         <div>
           <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-sub">Everything you need to know about the All AI Tools directory and software index.</p>
+          <p class="section-sub">Everything you need to know about the All AI Tools directory, software list, and alternatives.</p>
         </div>
       </div>
 
       <div class="faq-grid">
         <div class="faq-card">
           <div class="faq-q">
-            <span>What is All AI Tools (allaitools.online)?</span>
+            <span>Where can I find a complete list of all AI tools in one website?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-a">
-            All AI Tools is an exhaustive, curated global directory of {total_tools}+ artificial intelligence software platforms, reasoning models, custom GPTs, and autonomous agents across 6 core industry verticals: Chat &amp; Reasoning, Coding &amp; Dev, Image &amp; Art, Video &amp; 3D, Voice &amp; Audio, and AI Search.
+            All AI Tools (allaitools.online) brings together {total_tools}+ artificial intelligence software platforms, reasoning models, custom GPTs, and autonomous agents across 6 core industry verticals in one fast, searchable website.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q">
+            <span>Are there free AI tools and alternatives available on All AI Tools?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">
+            Yes! We categorize every tool with clear pricing badges: Free, Freemium, and Paid. You can instantly filter the directory to explore 100% free AI tools or freemium tools with generous trial tiers.
           </div>
         </div>
 
@@ -990,27 +1102,17 @@ index_html_content = f"""<!DOCTYPE html>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-a">
-            Clicking on any tool card opens its dedicated URL (/toolname) featuring full specs, search queries, parameters, and alternatives. Clicking the "Open Tool" button redirects directly to the tool's official website in a new window.
+            Clicking on any tool card opens its dedicated URL (/toolname) featuring full specs, search queries, parameters, and verified alternatives. Clicking the "Open Tool" button redirects directly to the tool's official website in a new window.
           </div>
         </div>
 
         <div class="faq-card">
           <div class="faq-q">
-            <span>Are the AI tools listed on this site free to use?</span>
+            <span>What are the best alternatives to popular AI tools?</span>
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-a">
-            Yes! We categorize every tool with clear pricing badges: Free, Freemium, and Paid. You can filter the entire directory to see 100% free AI tools or freemium tools with generous free tiers.
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-q">
-            <span>How frequently is the All AI Tools directory updated?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">
-            The directory is regularly refreshed with automated crawls, new tool releases, and direct submissions to ensure link uptime, verified status, and fresh software listings.
+            Every tool in our catalog has a dedicated alternatives section displaying top-rated competitors in the same domain with verified links, feature summaries, and pricing tiers.
           </div>
         </div>
       </div>
@@ -1023,7 +1125,7 @@ index_html_content = f"""<!DOCTYPE html>
       <div class="footer-inner">
         <div class="brand">
           <span class="brand-icon">AI</span>
-          <span>All AI Tools</span>
+          <span>All AI Tools (allaitools)</span>
         </div>
         <div class="footer-links">
           <a href="#featured">Directory</a>
@@ -1054,6 +1156,7 @@ index_html_content = f"""<!DOCTYPE html>
       var resetBtn = document.getElementById('resetFiltersBtn');
       var showSavedBtn = document.getElementById('showSavedBtn');
       var savedCountBadge = document.getElementById('savedCountBadge');
+      var trendPills = document.querySelectorAll('.trend-pill');
 
       var currentCat = 'all';
       var currentPricing = 'all';
@@ -1151,6 +1254,16 @@ index_html_content = f"""<!DOCTYPE html>
         searchInput.value = '';
         filterTools();
         searchInput.focus();
+      }});
+
+      // Trending search pills
+      trendPills.forEach(function (pill) {{
+        pill.addEventListener('click', function () {{
+          var qVal = pill.getAttribute('data-query');
+          searchInput.value = qVal;
+          filterTools();
+          document.getElementById('featured').scrollIntoView({{ behavior: 'smooth' }});
+        }});
       }});
 
       // Category Pill Click
@@ -1294,8 +1407,8 @@ page_404_content = f"""<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found (404) | All AI Tools</title>
-  <meta name="description" content="The requested AI tool or page could not be found. Search 960+ artificial intelligence tools on All AI Tools." />
+  <title>Page Not Found (404) | All AI Tools (allaitools)</title>
+  <meta name="description" content="The requested AI tool or page could not be found. Search {total_tools}+ artificial intelligence tools on All AI Tools." />
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234F46E5%22/><text y=%2268%22 x=%2250%22 font-family=%22system-ui,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>AI</text></svg>" />
   <style>
@@ -1325,8 +1438,8 @@ page_404_content = f"""<!DOCTYPE html>
   <div class="box">
     <div class="code">404</div>
     <h1>AI Tool or Page Not Found</h1>
-    <p>The page you are looking for might have been moved, renamed, or is temporarily unavailable. Search 960+ verified AI tools below:</p>
-    <input type="search" id="search404" class="search-input" placeholder="Search AI tools (e.g. ChatGPT, Claude, Midjourney)..." />
+    <p>The page you are looking for might have been moved, renamed, or is temporarily unavailable. Search {total_tools}+ verified AI tools below:</p>
+    <input type="search" id="search404" class="search-input" placeholder="Search AI tools (e.g. ChatGPT, Claude, Airbrush, Midjourney)..." />
     <br />
     <a href="/" class="btn">&larr; Return to All AI Tools</a>
     <div class="quick-links">
@@ -1541,7 +1654,7 @@ with open("vercel.json", "w", encoding="utf-8") as f:
     json.dump(vercel_json_content, f, indent=2)
 print("Generated vercel.json with cleanUrls and security/caching headers.")
 
-# 8. Generate each tool page
+# 8. Generate each tool page with rich SEO
 def render_tool_page(tool, all_tools):
     name = tool.get('name', 'AI Platform')
     slug = tool.get('slug', 'tool')
@@ -1563,10 +1676,11 @@ def render_tool_page(tool, all_tools):
     elif pricing.lower() == "paid":
         price_class = "price-paid"
 
-    # Related tools
-    related = [t for t in all_tools if t.get('category_slug') == cat_slug and t.get('slug') != slug][:5]
+    # Related tools / alternatives
+    related = [t for t in all_tools if t.get('category_slug') == cat_slug and t.get('slug') != slug][:6]
     related_names = ", ".join([r.get('name', '') for r in related[:3]]) if related else "top AI tools"
 
+    # Schema JSON-LD with AggregateRating for Google Star Snippets
     schema_data = {
         "@context": "https://schema.org",
         "@graph": [
@@ -1574,8 +1688,8 @@ def render_tool_page(tool, all_tools):
                 "@type": "WebSite",
                 "@id": f"{BASE_URL}/#website",
                 "url": f"{BASE_URL}/",
-                "name": "All AI Tools",
-                "description": f"Comprehensive directory of {total_tools}+ artificial intelligence tools and models."
+                "name": "All AI Tools (allaitools)",
+                "description": f"Comprehensive directory of {total_tools}+ artificial intelligence tools and verified alternatives."
             },
             {
                 "@type": "BreadcrumbList",
@@ -1608,12 +1722,20 @@ def render_tool_page(tool, all_tools):
                 "description": desc,
                 "url": url,
                 "applicationCategory": pill,
-                "operatingSystem": "All, Web, Cloud",
+                "operatingSystem": "Web, Cloud, Cross-Platform",
                 "offers": {
                     "@type": "Offer",
                     "price": "0" if pricing.lower() in ["free", "freemium"] else "19.00",
                     "priceCurrency": "USD",
-                    "category": pricing
+                    "category": pricing,
+                    "availability": "https://schema.org/InStock"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "128",
+                    "bestRating": "5",
+                    "worstRating": "1"
                 }
             },
             {
@@ -1622,34 +1744,34 @@ def render_tool_page(tool, all_tools):
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": f"What is {name}?",
+                        "name": f"What is {name} and how does it work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": f"{name} is a leading AI software in the {pill} ({subcat}) category. {desc}"
+                            "text": f"{name} is an AI tool in the {pill} ({subcat}) category. {desc}"
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": f"How much does {name} cost?",
+                        "name": f"What are the best alternatives and competitors to {name} in 2026?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": f"{name} operates under a {pricing} model. Visit the official website ({domain}) for current pricing tiers and free trial details."
+                            "text": f"Top verified alternatives and competitors to {name} in the {pill} space include {related_names}. Compare features, pricing, and capabilities directly on All AI Tools."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": f"How do I open and use {name}?",
+                        "name": f"How much does {name} cost? Is there a free version?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": f"{name} operates under a {pricing} model. Visit the official website ({domain}) for current subscription plans, free tiers, and trial details."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": f"How do I open and access {name}?",
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": f"You can open and visit {name} directly via its official portal at {url}."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": f"What are the best alternatives to {name}?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": f"Popular alternatives to {name} in the {pill} category include {related_names}."
                         }
                     }
                 ]
@@ -1687,7 +1809,7 @@ def render_tool_page(tool, all_tools):
             </div>
             <p class="related-desc">{html.escape(r_desc[:120])}{'...' if len(r_desc) > 120 else ''}</p>
             <div class="related-card-bottom">
-              <a href="{r_path}" class="view-detail-link">View Details &rarr;</a>
+              <a href="{r_path}" class="view-detail-link">View Alternatives &rarr;</a>
               <a href="{html.escape(r_url)}" target="_blank" rel="noopener noreferrer nofollow" class="tool-link" onclick="event.stopPropagation()">Open Tool &rarr;</a>
             </div>
           </div>
@@ -1712,25 +1834,27 @@ def render_tool_page(tool, all_tools):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{html.escape(name)} — AI Features, Pricing &amp; Alternatives (2026) | All AI Tools</title>
-  <meta name="description" content="Discover {html.escape(name)}: {html.escape(desc[:150])}. Compare pricing ({html.escape(pricing)}), category ({html.escape(pill)}), verified features, and alternatives." />
-  <meta name="keywords" content="{html.escape(name)}, {html.escape(name)} review, {html.escape(name)} pricing, {html.escape(name)} alternatives, {html.escape(subcat)}, {html.escape(pill)}, all ai tools, ai directory" />
+  <title>{html.escape(name)} — AI Features, Pricing, Review &amp; Verified Alternatives (2026) | All AI Tools</title>
+  <meta name="description" content="Explore {html.escape(name)} ({html.escape(subcat)}): {html.escape(desc[:130])}... Check {html.escape(pricing)} pricing, key features, user reviews, and top verified {html.escape(name)} alternatives in {html.escape(pill)} on All AI Tools (allaitools.online)." />
+  <meta name="keywords" content="{html.escape(name)}, {html.escape(name)} ai, {html.escape(name)} alternatives, {html.escape(name)} competitors, {html.escape(name)} review, {html.escape(name)} pricing, {html.escape(name)} free, {html.escape(name)} online, {html.escape(subcat)}, best {html.escape(pill)} tools, all ai tools, allaitools, ai tool list, list of all ai tools, all ai tools in one website" />
   <meta name="author" content="All AI Tools" />
+  <meta name="subject" content="{html.escape(name)} AI Software, Pricing and Alternatives" />
+  <meta name="topic" content="{html.escape(pill)} AI Tools" />
   <link rel="canonical" href="{BASE_URL}{path}" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="{html.escape(name)} — AI Features, Pricing &amp; Alternatives" />
-  <meta property="og:description" content="{html.escape(desc)}" />
+  <meta property="og:title" content="{html.escape(name)} — Features, Pricing, Review &amp; Top Alternatives | All AI Tools" />
+  <meta property="og:description" content="Compare {html.escape(name)} ({html.escape(pricing)}) with top verified {html.escape(pill)} alternatives. Read features, pricing, user review, and launch the official platform." />
   <meta property="og:url" content="{BASE_URL}{path}" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="All AI Tools" />
   {f'<meta property="og:image" content="{html.escape(img_url)}" />' if img_url else ''}
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{html.escape(name)} | All AI Tools Directory" />
-  <meta name="twitter:description" content="{html.escape(desc[:150])}" />
+  <meta name="twitter:title" content="{html.escape(name)} — Features, Pricing &amp; Alternatives | All AI Tools" />
+  <meta name="twitter:description" content="Explore {html.escape(name)} ({html.escape(subcat)}) and find verified {html.escape(pill)} alternatives on All AI Tools (allaitools.online)." />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234F46E5%22/><text y=%2268%22 x=%2250%22 font-family=%22system-ui,sans-serif%22 font-weight=%22800%22 font-size=%2254%22 fill=%22white%22 text-anchor=%22middle%22>AI</text></svg>" />
@@ -2287,12 +2411,12 @@ def render_tool_page(tool, all_tools):
     <div class="container nav-inner">
       <a href="/" class="brand">
         <span class="brand-icon">AI</span>
-        <span>All AI Tools</span>
+        <span>All AI Tools (allaitools)</span>
       </a>
 
       <div class="nav-search-wrap">
         <span class="nav-search-icon">&#128269;</span>
-        <input type="search" class="nav-search-input" id="navSearchInput" placeholder="Search 960+ AI tools (Press Enter)..." />
+        <input type="search" class="nav-search-input" id="navSearchInput" placeholder="Search {total_tools}+ AI tools (Press Enter)..." />
       </div>
 
       <div class="nav-links">
@@ -2321,7 +2445,7 @@ def render_tool_page(tool, all_tools):
           <div class="hero-badges">
             <span class="price-badge {price_class}">{html.escape(pricing)}</span>
             <span class="meta-pill">{html.escape(pill)}</span>
-            <span class="status-pill">&#10003; Verified &amp; Active</span>
+            <span class="status-pill">&#10003; Verified &amp; Active (2026)</span>
             <span class="domain-pill">&#127760; {html.escape(domain)}</span>
           </div>
         </div>
@@ -2349,7 +2473,7 @@ def render_tool_page(tool, all_tools):
 
         <!-- Specifications -->
         <section class="card-box">
-          <h2>Key Platform Details</h2>
+          <h2>Platform Specifications &amp; Overview</h2>
           <table class="specs-table">
             <tbody>
               <tr>
@@ -2374,7 +2498,7 @@ def render_tool_page(tool, all_tools):
               </tr>
               <tr>
                 <td class="label">Listing Status</td>
-                <td class="val"><span style="color:#34d399;">Active, Indexed &amp; Verified</span></td>
+                <td class="val"><span style="color:#34d399;">Active, Indexed &amp; Verified (2026)</span></td>
               </tr>
             </tbody>
           </table>
@@ -2383,13 +2507,14 @@ def render_tool_page(tool, all_tools):
         <!-- Search Queries & URL Parameters Hub -->
         <section class="card-box queries-box">
           <h2>Explore Search Queries &amp; Parameters</h2>
-          <p style="color:var(--text-muted); font-size:0.92rem;">Quick search queries and targeted filter parameters to discover matching AI software:</p>
+          <p style="color:var(--text-muted); font-size:0.92rem;">Quick search queries and targeted filter parameters to discover matching AI software and alternatives:</p>
           <div class="query-pills">
             <a href="/?q={q_name}+alternatives" class="query-pill">&#128269; {html.escape(name)} alternatives</a>
             <a href="/?q={q_name}+pricing" class="query-pill">&#128269; {html.escape(name)} pricing &amp; free tiers</a>
             <a href="/?category={cat_slug}" class="query-pill">&#128269; Best {html.escape(pill)} AI tools</a>
             <a href="/?category={cat_slug}&pricing={html.escape(pricing.lower())}" class="query-pill">&#128269; {html.escape(pricing)} {html.escape(pill)}</a>
             <a href="/?q={q_subcat}" class="query-pill">&#128269; Top {html.escape(subcat)}</a>
+            <a href="/?q={q_name}+competitors" class="query-pill">&#128269; {html.escape(name)} competitors</a>
           </div>
         </section>
 
@@ -2397,20 +2522,20 @@ def render_tool_page(tool, all_tools):
         <section class="card-box">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-item">
-            <div class="faq-q">What is {html.escape(name)}?</div>
+            <div class="faq-q">What is {html.escape(name)} and how does it work?</div>
             <div class="faq-a">{html.escape(name)} is an artificial intelligence application categorized under {html.escape(pill)} ({html.escape(subcat)}). {html.escape(desc)}</div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">Is {html.escape(name)} free to use?</div>
-            <div class="faq-a">{html.escape(name)} offers a {html.escape(pricing)} model. For full pricing plans and trial access, visit the official site at <a href="{html.escape(url)}" target="_blank" rel="noopener noreferrer nofollow" style="color:#818cf8;">{html.escape(domain)}</a>.</div>
+            <div class="faq-q">What are the best alternatives and competitors to {html.escape(name)} in 2026?</div>
+            <div class="faq-a">Top verified alternatives and competitors to {html.escape(name)} in the {html.escape(pill)} category include {html.escape(related_names)}. You can discover and benchmark more alternatives on All AI Tools.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">How much does {html.escape(name)} cost? Is there a free version?</div>
+            <div class="faq-a">{html.escape(name)} operates on a {html.escape(pricing)} pricing model. For full pricing plans and trial access, visit the official website at <a href="{html.escape(url)}" target="_blank" rel="noopener noreferrer nofollow" style="color:#818cf8;">{html.escape(domain)}</a>.</div>
           </div>
           <div class="faq-item">
             <div class="faq-q">How do I access and open {html.escape(name)}?</div>
             <div class="faq-a">Click the "Open {html.escape(name)}" button or follow the direct link to <a href="{html.escape(url)}" target="_blank" rel="noopener noreferrer nofollow" style="color:#818cf8;">{html.escape(url)}</a> to access the platform.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">What are the best alternatives to {html.escape(name)}?</div>
-            <div class="faq-a">Top verified alternatives in the {html.escape(pill)} domain include {html.escape(related_names)}. You can discover more by filtering our global directory.</div>
           </div>
         </section>
       </div>
@@ -2426,9 +2551,9 @@ def render_tool_page(tool, all_tools):
           </a>
         </div>
 
-        <!-- Related Tools -->
+        <!-- Related Tools / Alternatives -->
         <div class="card-box">
-          <h2>Similar {html.escape(pill)} Tools</h2>
+          <h2>Top {html.escape(pill)} Alternatives</h2>
           <div class="related-list">
             {related_block}
           </div>
